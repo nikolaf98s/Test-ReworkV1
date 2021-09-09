@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SurveyCat.Database", "SurveyCat.Database\SurveyCat.Database.sqlproj", "{36AB1D43-26B8-4777-8264-2EB6DA681BE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{D7729B3E-1F66-4462-A910-42F1618651A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SurveyCat.Service", "SurveyCat.Service\SurveyCat.Service.csproj", "{0F0F7948-D456-4E8E-A671-62D2C06D2DA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyCat.Air", "SurveyCat.Air\SurveyCat.Air.csproj", "{93A34BD5-3802-44F0-A8EF-C432C83F41EF}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SurveyCat.Insight", "http://localhost:56551", "{E34B19DD-7716-44C1-ABAB-E7FC3A8D1980}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56551"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\Documents\My Web Sites\SurveyCat.Insight\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56551\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56551"
+		Release.AspNetCompiler.PhysicalPath = "..\..\Documents\My Web Sites\SurveyCat.Insight\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56551\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\Documents\My Web Sites\SurveyCat.Insight\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36AB1D43-26B8-4777-8264-2EB6DA681BE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36AB1D43-26B8-4777-8264-2EB6DA681BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36AB1D43-26B8-4777-8264-2EB6DA681BE4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{36AB1D43-26B8-4777-8264-2EB6DA681BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36AB1D43-26B8-4777-8264-2EB6DA681BE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36AB1D43-26B8-4777-8264-2EB6DA681BE4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D7729B3E-1F66-4462-A910-42F1618651A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7729B3E-1F66-4462-A910-42F1618651A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7729B3E-1F66-4462-A910-42F1618651A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7729B3E-1F66-4462-A910-42F1618651A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F0F7948-D456-4E8E-A671-62D2C06D2DA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F0F7948-D456-4E8E-A671-62D2C06D2DA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F0F7948-D456-4E8E-A671-62D2C06D2DA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F0F7948-D456-4E8E-A671-62D2C06D2DA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93A34BD5-3802-44F0-A8EF-C432C83F41EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93A34BD5-3802-44F0-A8EF-C432C83F41EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93A34BD5-3802-44F0-A8EF-C432C83F41EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93A34BD5-3802-44F0-A8EF-C432C83F41EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E34B19DD-7716-44C1-ABAB-E7FC3A8D1980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E34B19DD-7716-44C1-ABAB-E7FC3A8D1980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E34B19DD-7716-44C1-ABAB-E7FC3A8D1980}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{E34B19DD-7716-44C1-ABAB-E7FC3A8D1980}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27E58275-E43E-42FB-9C72-A1B0DE56B56C}
+	EndGlobalSection
+EndGlobal

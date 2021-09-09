@@ -1,0 +1,7 @@
+﻿CREATE TABLE [Product] (
+    [Id]          UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+    [ProductName] NVARCHAR(255),
+    [BrandId]     UNIQUEIDENTIFIER,
+    CONSTRAINT    [PK_Product] PRIMARY KEY ([Id]),
+    CONSTRAINT    [FK_Product_Brand] FOREIGN KEY ([BrandId]) REFERENCES [Brand] ([Id]) ON DELETE CASCADE ON UPDATE CASCADE
+);
