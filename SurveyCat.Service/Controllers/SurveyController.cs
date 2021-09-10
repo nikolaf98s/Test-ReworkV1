@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using SurveyCat.Service.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Swashbuckle.AspNetCore.Annotations;
-using SurveyCat.Service.Repository;
-using SurveyCat.Service.Services;
-
+﻿
 namespace SurveyCat.Service.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using SurveyCat.Service.Models;
+    using Microsoft.AspNetCore.Mvc;
+    using Swashbuckle.AspNetCore.Annotations;
+    using SurveyCat.Service.Services;
+
     [ApiController]
     [Route("[controller]")]
     public class SurveyController : Controller

@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net.Http;
-using SurveyCat.Air.Entities;
-using Newtonsoft.Json;
-using System.Windows;
-
+﻿
 namespace SurveyCat.Air.Service
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using System.Net.Http;
+    using SurveyCat.Air.Entities;
+    using Newtonsoft.Json;
+    using System.Windows;
+
     public class ApiHelper
     {
         public static ApiHelper instance = null;

@@ -19,7 +19,7 @@ function loadBarChart(json){
     const data = {
       labels: labels,
       datasets: [{
-        //label: '',
+        label: '',
         backgroundColor: 'rgb(255, 99, 132)',
         borderColor: 'rgb(255, 99, 132)',
         data: avgScore,

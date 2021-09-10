@@ -1,9 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using SurveyCat.Service.Models;
-
+﻿
 namespace SurveyCat.Service.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using SurveyCat.Service.Models;
+
     public interface ISurveyService
     {
         public List<ProductModel> GetProducts(Guid brandId);

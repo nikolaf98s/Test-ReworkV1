@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
-using SurveyCat.Service.Models;
-using Dapper;
-using Microsoft.Extensions.Configuration;
-
-
-
-
+﻿
 namespace SurveyCat.Service.Repository
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Data.SqlClient;
+    using System.Linq;
+    using SurveyCat.Service.Models;
+    using Dapper;
+    using Microsoft.Extensions.Configuration;
+
     public class DatabaseRepository : IDatabaseRepository
     {
         private readonly IConfiguration configuration;

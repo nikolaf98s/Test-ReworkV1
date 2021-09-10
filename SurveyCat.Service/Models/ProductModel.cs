@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dapper.Contrib.Extensions;
-using Newtonsoft.Json;
-
+﻿
 namespace SurveyCat.Service.Models
 {
+    using System;
+    using Dapper.Contrib.Extensions;
+
     [Table("[Product]")]
     public class ProductModel
     {

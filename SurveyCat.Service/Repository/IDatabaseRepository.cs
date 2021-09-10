@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using SurveyCat.Service.Models;
-
+﻿
 namespace SurveyCat.Service.Repository
 {
+    using System;
+    using System.Collections.Generic;
+    using SurveyCat.Service.Models;
+
     public interface IDatabaseRepository
     {
         public List<ProductModel> GetProducts(Guid brendId);

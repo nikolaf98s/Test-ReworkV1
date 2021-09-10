@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using SurveyCat.Service.Models;
-using SurveyCat.Service.Repository;
-
+﻿
 namespace SurveyCat.Service.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using SurveyCat.Service.Models;
+    using SurveyCat.Service.Repository;
+
     public class SurveyService : ISurveyService
     {
         private IDatabaseRepository repository;

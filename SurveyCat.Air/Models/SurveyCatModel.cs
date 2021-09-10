@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
-using DevExpress.Utils.Native;
-using EO.WebBrowser;
-using GalaSoft.MvvmLight.Command;
-using SurveyCat.Air.Entities;
-using SurveyCat.Air.Service;
-
+﻿
 namespace SurveyCat.Air.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Threading.Tasks;
+    using System.Windows;
+    using System.Windows.Input;
+    using GalaSoft.MvvmLight.Command;
+    using SurveyCat.Air.Entities;
+    using SurveyCat.Air.Service;
+
     public class SurveyCatModel : INotifyPropertyChanged
     {
         private List<Brand> brands;
@@ -135,7 +134,6 @@ namespace SurveyCat.Air.Models
                 this.NotifyPropertyChanged(nameof(this.Brands));
             }
         }
-
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(string propertyName)
