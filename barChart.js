@@ -46,6 +46,9 @@ function loadBarChart(json) {
           display: false,
         },
       },
+      scales: {
+        
+      },
     },
   };
   var myChart = new Chart(document.getElementById("BarChart"), config);
