@@ -7,9 +7,9 @@ namespace SurveyCat.Service.Repository
 
     public interface IDatabaseRepository
     {
-        public List<ProductModel> GetProducts(Guid brendId);
-        public List<BrandModel> GetBrands();
-        public void AddSurvey(SurveyModel surveyModel);
-        public List<ReportModel> GetReport();
+        public List<Product> GetProducts(Guid brendId);
+        public List<Brand> GetBrands();
+        public void AddSurvey(Survey surveyModel);
+        public List<Report> GetReport();
     }
 }

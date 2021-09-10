@@ -5,11 +5,11 @@ namespace SurveyCat.Service.Models
     using Dapper.Contrib.Extensions;
 
     [Table("[Brand]")]
-    public class BrandModel
+    public class Brand
     {
         [ExplicitKey]
         public Guid Id { get; set; }
-        public string BrandName { get; set; }
+        public string Name { get; set; }
 
     }
 }

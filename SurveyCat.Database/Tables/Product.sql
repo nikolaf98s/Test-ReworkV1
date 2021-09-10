@@ -2,6 +2,6 @@
     [Id]          UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
     [Name]        NVARCHAR(255)    NOT NULL,
     [BrandId]     UNIQUEIDENTIFIER NOT NULL,
-    CONSTRAINT    [PK_Product] PRIMARY KEY ([Id]),
-    CONSTRAINT    [FK_Product_Brand] FOREIGN KEY ([BrandId]) REFERENCES [Brand] ([Id]) ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT    [PK_Product]              PRIMARY KEY ([Id]),
+    CONSTRAINT    [FK_Product_Brand]        FOREIGN KEY ([BrandId]) REFERENCES [Brand] ([Id]) ON DELETE CASCADE ON UPDATE CASCADE
 );

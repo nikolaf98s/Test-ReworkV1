@@ -21,7 +21,7 @@ namespace SurveyCat.Service.Repository
             conString = configuration.GetConnectionString("DefaultConnection");
         }
 
-        public void AddSurvey(SurveyModel surveyModel)
+        public void AddSurvey(Survey surveyModel)
         {
             using (IDbConnection connection = new SqlConnection(conString))
             {                
@@ -29,27 +29,27 @@ namespace SurveyCat.Service.Repository
             }
         }
 
-        public List<BrandModel> GetBrands()
+        public List<Brand> GetBrands()
         {
             using (IDbConnection connection = new SqlConnection(conString))
             {
-                return  connection.Query<BrandModel>(@$"SELECT * FROM [Brand]").ToList();
+                return  connection.Query<Brand>(@$"SELECT * FROM [Brand]").ToList();
             }
         }
 
-        public List<ProductModel> GetProducts(Guid brendId)
+        public List<Product> GetProducts(Guid brendId)
         {     
             using (IDbConnection connection = new SqlConnection(conString))
             {
-                return  connection.Query<ProductModel>(@$"SELECT * FROM [Product] WHERE [BrandId] = '{brendId}'").ToList();
+                return  connection.Query<Product>(@$"SELECT * FROM [Product] WHERE [BrandId] = '{brendId}'").ToList();
             }
         }
 
-        public List<ReportModel> GetReport()
+        public List<Report> GetReport()
         {
             using (IDbConnection connection = new SqlConnection(conString))
             {              
-                return connection.Query<ReportModel>(@$"SELECT * FROM v_Report").ToList();                          
+                return connection.Query<Report>(@$"SELECT * FROM v_Report").ToList();                          
             }
         }
     }

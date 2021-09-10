@@ -6,7 +6,7 @@
     <members>
         <!-- Badly formed XML comment ignored for member "M:SurveyCat.Service.Controllers.SurveyController.GetProducts(System.Guid)" -->
         <!-- Badly formed XML comment ignored for member "M:SurveyCat.Service.Controllers.SurveyController.GetBrands" -->
-        <!-- Badly formed XML comment ignored for member "M:SurveyCat.Service.Controllers.SurveyController.AddSurvey(SurveyCat.Service.Models.SurveyModel)" -->
+        <!-- Badly formed XML comment ignored for member "M:SurveyCat.Service.Controllers.SurveyController.AddSurvey(SurveyCat.Service.Models.Survey)" -->
         <!-- Badly formed XML comment ignored for member "M:SurveyCat.Service.Controllers.SurveyController.GetReport" -->
     </members>
 </doc>

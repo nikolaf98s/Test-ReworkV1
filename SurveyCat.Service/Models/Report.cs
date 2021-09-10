@@ -1,9 +1,9 @@
 ﻿namespace SurveyCat.Service.Models
 {
-    public class ReportModel
+    public class Report
     {
         public decimal AverageRating { get; set; }
-        public string ProductName { get; set; }
+        public string Name { get; set; }
 
     }
 }

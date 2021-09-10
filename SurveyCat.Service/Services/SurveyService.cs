@@ -15,22 +15,22 @@ namespace SurveyCat.Service.Services
             this.repository = repository;
         }
 
-        public void AddSurvey(SurveyModel surveyModel)
+        public void AddSurvey(Survey surveyModel)
         {
             repository.AddSurvey(surveyModel);
         }
 
-        public List<BrandModel> GetBrands()
+        public List<Brand> GetBrands()
         {
             return repository.GetBrands();
         }
 
-        public List<ProductModel> GetProducts(Guid brandId)
+        public List<Product> GetProducts(Guid brandId)
         {
             return repository.GetProducts(brandId);  
         }
 
-        public List<ReportModel> GetReport()
+        public List<Report> GetReport()
         {
             return repository.GetReport();
         }

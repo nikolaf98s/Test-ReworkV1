@@ -5,7 +5,7 @@ namespace SurveyCat.Service.Models
     using Dapper.Contrib.Extensions;
 
     [Table("[Survey]")]
-    public class SurveyModel
+    public class Survey
     {
         [ExplicitKey]
         public Guid Id { get; set; }

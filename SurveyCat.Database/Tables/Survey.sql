@@ -1,6 +1,6 @@
 ﻿CREATE TABLE Survey (
     [Id]        UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
-    [Rating]    DECIMAL          NOT NULL,
+    [Rating]    INT              NOT NULL,
     [Comment]   NVARCHAR(MAX)    NOT NULL,
     [ProductId] UNIQUEIDENTIFIER NOT NULL,
     CONSTRAINT  [PK_Survey] PRIMARY KEY ([Id]),
