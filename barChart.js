@@ -1,7 +1,7 @@
-
+const apiURL = "https://localhost:5001/Survey/report";
 
 function onload() {
-  fetch("https://localhost:5001/Survey/report")
+  fetch(apiURL)
     .then((response) => response.json())
     .then((json) => loadBarChart(json))
     .catch(console.error());
@@ -17,13 +17,20 @@ function loadBarChart(json) {
   json.forEach((element) => {
     avgScore[i] = element.averageRating;
     labels[i] = element.name;
-    colors[i] = "rgb(" + getRandomNumber() + ", " + getRandomNumber() + "," + getRandomNumber() + ")";
+    colors[i] =
+      "rgb(" +
+      getRandomNumber() +
+      ", " +
+      getRandomNumber() +
+      "," +
+      getRandomNumber() +
+      ")";
     i++;
   });
   const data = {
     labels: labels,
     datasets: [
-      {      
+      {
         backgroundColor: colors,
         data: avgScore,
       },
@@ -32,11 +39,14 @@ function loadBarChart(json) {
   const config = {
     type: "bar",
     data: data,
-    options: { responsive: true ,plugins: {
-      legend: {
-        display: false,       
-      },     
-    }},
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+    },
   };
   var myChart = new Chart(document.getElementById("BarChart"), config);
 }
@@ -46,4 +56,3 @@ function getRandomNumber() {
   to = 255;
   return Math.floor(Math.random() * (to - from) + from);
 }
-
