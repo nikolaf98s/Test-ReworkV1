@@ -27,10 +27,8 @@ namespace SurveyCat.Service.Repository
         public void AddSurvey(SurveyModel surveyModel)
         {
             using (IDbConnection connection = new SqlConnection(conString))
-            {
-                
-                connection.Query(@$"INSERT INTO [Survey] ([Rating],[Comment],[ProductId]) VALUES({surveyModel.Rating},'{surveyModel.Comment}','{surveyModel.ProductId}');");
-              
+            {                
+                connection.Query(@$"INSERT INTO [Survey] ([Rating],[Comment],[ProductId]) VALUES({surveyModel.Rating},'{surveyModel.Comment}','{surveyModel.ProductId}');");             
             }
         }
 
@@ -38,34 +36,23 @@ namespace SurveyCat.Service.Repository
         {
             using (IDbConnection connection = new SqlConnection(conString))
             {
-               
-
                 return  connection.Query<BrandModel>(@$"SELECT * FROM [Brand]").ToList();
-               
-                
             }
         }
 
         public List<ProductModel> GetProducts(Guid brendId)
-        {
-            
+        {     
             using (IDbConnection connection = new SqlConnection(conString))
             {
-
                 return  connection.Query<ProductModel>(@$"SELECT * FROM [Product] WHERE [BrandId] = '{brendId}'").ToList();
-                
-               
             }
         }
 
         public List<ReportModel> GetReport()
         {
             using (IDbConnection connection = new SqlConnection(conString))
-            {
-                
-                return connection.Query<ReportModel>(@$"SELECT * FROM v_Report").ToList(); 
-               
-                
+            {              
+                return connection.Query<ReportModel>(@$"SELECT * FROM v_Report").ToList();                          
             }
         }
     }

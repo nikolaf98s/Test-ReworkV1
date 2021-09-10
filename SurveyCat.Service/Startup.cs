@@ -28,7 +28,11 @@ namespace SurveyCat.Service
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SurveyCat.Service", Version = "v1" });
             });
 
+            services.AddCors(options => options.AddDefaultPolicy(
+                builder => builder.AllowAnyOrigin()));
+
             services.AddTransient<ISurveyService, SurveyService>();
+
             services.AddSingleton<IDatabaseRepository, DatabaseRepository>();
             
         }
@@ -42,6 +46,8 @@ namespace SurveyCat.Service
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SurveyCat.Service v1"));
             }
+
+            app.UseCors();
 
             app.UseHttpsRedirection();
 

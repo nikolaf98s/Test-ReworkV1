@@ -166,7 +166,6 @@ namespace SurveyCat.Air.Models
                 Survey survey = new Survey(Rating, Comment, SelectedProduct.Id);
                 await ApiHelper.instance.PostSurvey(survey);
                 ClearAllFields();
-                MessageBox.Show("Survey Sent!!!");
             }
         }
         private void SelectedBrandChange()

@@ -34,7 +34,6 @@ namespace SurveyCat.Air.Service
             ApiClient.DefaultRequestHeaders.Accept.Clear();
             ApiClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
         }
-
         public async Task<List<Brand>> GetBrands()
         {          
             
@@ -89,13 +88,16 @@ namespace SurveyCat.Air.Service
             {
                 try
                 {
-                    HttpResponseMessage response = await ApiClient.PostAsJsonAsync($"{BaseUrl}addsurvey", survey);
+                    HttpResponseMessage response = await ApiClient.PostAsJsonAsync($"{BaseUrl}survey", survey);
                     response.EnsureSuccessStatusCode();
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Error with sending survey!!!");
-                }              
+                    return;
+                }
+
+                MessageBox.Show("Survey Sent!!!");
             }
         }
 

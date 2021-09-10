@@ -23,10 +23,10 @@ namespace SurveyCat.Service.Controllers
         }
 
         // <summary>
-        /// Get weather forecast for next 5 days.
+        /// Get products from brand guid
         /// </summary>
         /// <returns>
-        /// Weather forecast for next 5 days.
+        /// Get products
         /// </returns>
         [HttpGet("products")]
         [SwaggerOperation(OperationId = "Products", Summary = "List of products of given brandId")]
@@ -42,10 +42,10 @@ namespace SurveyCat.Service.Controllers
         }
 
         // <summary>
-        /// Get weather forecast for next 5 days.
+        /// Get brands
         /// </summary>
         /// <returns>
-        /// Weather forecast for next 5 days.
+        /// Get brands
         /// </returns>
         [HttpGet("brands")]
         [SwaggerOperation(OperationId = "Brands", Summary = "List of brands")]
@@ -68,10 +68,10 @@ namespace SurveyCat.Service.Controllers
         }
 
         // <summary>
-        /// Get weather forecast for next 5 days.
+        /// Add survey 
         /// </summary>
         /// <returns>
-        /// Weather forecast for next 5 days.
+        ///  Add survey 
         /// </returns>
         [HttpPost("survey")]
         [SwaggerOperation(OperationId = "addsurvey", Summary = "AddSurvey")]
@@ -93,10 +93,10 @@ namespace SurveyCat.Service.Controllers
         }
 
         // <summary>
-        /// Get weather forecast for next 5 days.
+        ///  Get report 
         /// </summary>
         /// <returns>
-        /// Weather forecast for next 5 days.
+        /// Get report
         /// </returns>
         [HttpGet("report")]
         [SwaggerOperation(OperationId = "getreport", Summary = "GetReport")]
