@@ -1,20 +1,42 @@
-﻿
+﻿//-------------------------------------------------------------------------------
+// <copyright file="ApiHelper.cs" company="SoftLab">
+//     Copyright (c) www.softlab.rs. All rights reserved.
+// </copyright>
+//-------------------------------------------------------------------------------
 namespace SurveyCat.Air.Service
 {
     using System;
     using System.Collections.Generic;
-    using System.Threading.Tasks;
     using System.Net.Http;
-    using SurveyCat.Air.Entities;
-    using Newtonsoft.Json;
+    using System.Threading.Tasks;
     using System.Windows;
+    using Newtonsoft.Json;
+    using SurveyCat.Air.Entities;
 
+    /// <summary>
+    /// The API Helper
+    /// </summary>
     public class ApiHelper
     {
-        public static ApiHelper instance = null;
-        public HttpClient ApiClient { get; set; }
+        /// <summary>
+        /// The instance
+        /// </summary>
+        private static ApiHelper instance = null;
+
+        /// <summary>
+        /// Gets or sets the base URL.
+        /// </summary>
+        /// <value>
+        /// The base URL.
+        /// </value>
         public static string BaseUrl { get; set; } = "https://localhost:5001/Survey/";
 
+        /// <summary>
+        /// Gets the instance.
+        /// </summary>
+        /// <value>
+        /// The instance.
+        /// </value>
         public static ApiHelper Instance
         {
             get
@@ -23,24 +45,41 @@ namespace SurveyCat.Air.Service
                 {
                     instance = new ApiHelper();
                 }
+
                 return instance;
             }
         }
+
+        /// <summary>
+        /// Gets or sets the API client.
+        /// </summary>
+        /// <value>
+        /// The API client.
+        /// </value>
+        public HttpClient ApiClient { get; set; }
+
+        /// <summary>
+        /// Initializes the client.
+        /// </summary>
         public void InitializeClient()
         {
-            ApiClient = new HttpClient();
-            ApiClient.BaseAddress = new Uri(BaseUrl);
-            ApiClient.DefaultRequestHeaders.Accept.Clear();
-            ApiClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            this.ApiClient = new HttpClient();
+            this.ApiClient.BaseAddress = new Uri(BaseUrl);
+            this.ApiClient.DefaultRequestHeaders.Accept.Clear();
+            this.ApiClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
         }
+
+        /// <summary>
+        /// Gets the brands.
+        /// </summary>
+        /// <returns> List of brands </returns>
         public async Task<List<Brand>> GetBrands()
-        {          
-            
-            using (ApiClient)
+        {           
+            using (this.ApiClient)
             {
                 try
                 {
-                    var response = await ApiClient.GetAsync($"{BaseUrl}brands");
+                    var response = await this.ApiClient.GetAsync($"{BaseUrl}brands");
                     if (response.IsSuccessStatusCode == true)
                     {
                         string content = await response.Content.ReadAsStringAsync();
@@ -51,23 +90,28 @@ namespace SurveyCat.Air.Service
                 {
                     MessageBox.Show("Error with geting brand data!!!");
                 }
-
             }
+
             return null;
         }
+
+        /// <summary>
+        /// Gets the products.
+        /// </summary>
+        /// <param name="brandId">The brand identifier.</param>
+        /// <returns> List of products </returns>
         public async Task<List<Product>> GetProducts(Guid brandId)
         {
-            InitializeClient();
+            this.InitializeClient();
             List<Product> products = new List<Product>();
-            using (ApiClient)
+            using (this.ApiClient)
             {
                 try
                 {
-                    var response = await ApiClient.GetAsync(BaseUrl + "products?brandId=" + brandId);
+                    var response = await this.ApiClient.GetAsync(BaseUrl + "products?brandId=" + brandId);
 
                     if (response.IsSuccessStatusCode == true)
                     {
-
                         string content = await response.Content.ReadAsStringAsync();
                         products = JsonConvert.DeserializeObject<List<Product>>(content);
                     }
@@ -75,19 +119,25 @@ namespace SurveyCat.Air.Service
                 catch (Exception)
                 {
                     MessageBox.Show("Error with geting product data!!!");
-                }
-               
+                }   
             }
+
             return products;
         }
+
+        /// <summary>
+        /// Posts the survey.
+        /// </summary>
+        /// <param name="survey">The survey.</param>
+        /// <returns> Post survey </returns>
         public async Task PostSurvey(Survey survey)
         {
-            InitializeClient();
-            using (ApiClient)
+            this.InitializeClient();
+            using (this.ApiClient)
             {
                 try
                 {
-                    HttpResponseMessage response = await ApiClient.PostAsJsonAsync($"{BaseUrl}survey", survey);
+                    HttpResponseMessage response = await this.ApiClient.PostAsJsonAsync($"{BaseUrl}survey", survey);
                     response.EnsureSuccessStatusCode();
                 }
                 catch (Exception)
@@ -99,6 +149,5 @@ namespace SurveyCat.Air.Service
                 MessageBox.Show("Survey Sent!!!");
             }
         }
-
     }
 }

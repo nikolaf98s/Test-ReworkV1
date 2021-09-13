@@ -62,9 +62,15 @@
   <ItemGroup>
     <Build Include="Tables\Brand.sql" />
     <Build Include="Tables\Product.sql" />
-    <Build Include="Views\Report.sql" />
+    <Build Include="Views\v_Report.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Survey.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
 </Project>

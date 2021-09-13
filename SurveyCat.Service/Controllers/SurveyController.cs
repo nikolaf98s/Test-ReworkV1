@@ -1,4 +1,8 @@
-﻿
+﻿//-------------------------------------------------------------------------------
+// <copyright file="SurveyController.cs" company="SoftLab">
+//     Copyright (c) www.softlab.rs. All rights reserved.
+// </copyright>
+//-------------------------------------------------------------------------------
 namespace SurveyCat.Service.Controllers
 {
     using System;
@@ -8,23 +12,33 @@ namespace SurveyCat.Service.Controllers
     using SurveyCat.Service.Services;
     using Swashbuckle.AspNetCore.Annotations;
 
+    /// <summary>
+    /// The SurveyController
+    /// </summary>
+    /// <seealso cref="Microsoft.AspNetCore.Mvc.Controller" />
     [ApiController]
     [Route("[controller]")]
     public class SurveyController : Controller
     {
-
+        /// <summary>
+        /// The survey service
+        /// </summary>
         private readonly ISurveyService surveyService;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SurveyController"/> class.
+        /// </summary>
+        /// <param name="surveyService">The survey service.</param>
         public SurveyController(ISurveyService surveyService)
         {
             this.surveyService = surveyService;
         }
 
-        // <summary>
-        /// Get products from brand guid
+        /// <summary>
+        /// Gets the products.
         /// </summary>
-        /// <returns>
-        /// Get products
-        /// </returns>
+        /// <param name="brandId">The brand identifier.</param>
+        /// <returns> Returns Products </returns>
         [HttpGet("products")]
         [SwaggerOperation(OperationId = "Products", Summary = "List of products of given brandId")]
         [SwaggerResponse(statusCode: 200, type: typeof(List<Product>), description: "successful operation")]
@@ -44,11 +58,11 @@ namespace SurveyCat.Service.Controllers
             }
         }
 
-        // <summary>
+        /// <summary>
         /// Get brands
         /// </summary>
         /// <returns>
-        /// Get brands
+        /// Return Brands
         /// </returns>
         [HttpGet("brands")]
         [SwaggerOperation(OperationId = "Brands", Summary = "List of brands")]
@@ -66,15 +80,15 @@ namespace SurveyCat.Service.Controllers
             catch (Exception ex)
             {
                 return this.BadRequest(ex.Message);
-            }
-            
+            }      
         }
 
-        // <summary>
-        /// Add survey 
+        /// <summary>
+        /// Add survey
         /// </summary>
+        /// <param name="surveyModel">The survey model.</param>
         /// <returns>
-        ///  Add survey 
+        /// Adds survey
         /// </returns>
         [HttpPost("survey")]
         [SwaggerOperation(OperationId = "Survey", Summary = "AddSurvey")]
@@ -95,11 +109,11 @@ namespace SurveyCat.Service.Controllers
             }
         }
 
-        // <summary>
+        /// <summary>
         ///  Get report 
         /// </summary>
         /// <returns>
-        /// Get report
+        /// Gets report
         /// </returns>
         [HttpGet("report")]
         [SwaggerOperation(OperationId = "Report", Summary = "GetReport")]
